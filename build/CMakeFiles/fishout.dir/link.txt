@@ -1,1 +1,0 @@
-/usr/bin/cc  -g   CMakeFiles/fishout.dir/main.c.o  -o fishout -rdynamic game/libgame.a math/libmath.a data/libdata.a utils/libutils.a data/libdata.a -lm -lpthread -lGL -lGLU -lglut -lSDL2 -lSDL2_image 
