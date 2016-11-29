@@ -1,0 +1,2 @@
+/usr/bin/ar qc libutils.a  CMakeFiles/utils.dir/xml.c.o CMakeFiles/utils.dir/io.c.o
+/usr/bin/ranlib libutils.a

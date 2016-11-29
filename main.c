@@ -1,4 +1,5 @@
 #include "game.h"
+#include "m_string.h"
 
 int main()
 {

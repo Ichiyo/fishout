@@ -1,0 +1,192 @@
+The system is: Linux - 4.7.9-200.fc24.x86_64 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/manh/Documents/fishout/build/CMakeFiles/3.5.2/CompilerIdC/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/manh/Documents/fishout/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_6f219/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_6f219.dir/build.make CMakeFiles/cmTC_6f219.dir/build
+gmake[1]: Entering directory '/home/manh/Documents/fishout/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6f219.dir/testCCompiler.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_6f219.dir/testCCompiler.c.o   -c /home/manh/Documents/fishout/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_6f219
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6f219.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_6f219.dir/testCCompiler.c.o  -o cmTC_6f219 -rdynamic 
+gmake[1]: Leaving directory '/home/manh/Documents/fishout/build/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/manh/Documents/fishout/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_3dd14/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_3dd14.dir/build.make CMakeFiles/cmTC_3dd14.dir/build
+gmake[1]: Entering directory '/home/manh/Documents/fishout/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3dd14.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_3dd14.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_3dd14
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3dd14.dir/link.txt --verbose=1
+/usr/bin/cc      -v CMakeFiles/cmTC_3dd14.dir/CMakeCCompilerABI.c.o  -o cmTC_3dd14 -rdynamic  
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/6.2.1/lto-wrapper
+Target: x86_64-redhat-linux
+Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,objc,obj-c++,fortran,ada,go,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --disable-libgcj --with-isl --enable-libmpx --enable-gnu-indirect-function --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux
+Thread model: posix
+gcc version 6.2.1 20160916 (Red Hat 6.2.1-2) (GCC) 
+COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/6.2.1/:/usr/libexec/gcc/x86_64-redhat-linux/6.2.1/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/6.2.1/:/usr/lib/gcc/x86_64-redhat-linux/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/6.2.1/:/usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3dd14' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/libexec/gcc/x86_64-redhat-linux/6.2.1/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/6.2.1/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/6.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYq9ThN.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_3dd14 /usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/6.2.1/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/6.2.1 -L/usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../.. CMakeFiles/cmTC_3dd14.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-redhat-linux/6.2.1/crtend.o /usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../../../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3dd14' '-rdynamic' '-mtune=generic' '-march=x86-64'
+gmake[1]: Leaving directory '/home/manh/Documents/fishout/build/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/manh/Documents/fishout/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/gmake" "cmTC_3dd14/fast"]
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTC_3dd14.dir/build.make CMakeFiles/cmTC_3dd14.dir/build]
+  ignore line: [gmake[1]: Entering directory '/home/manh/Documents/fishout/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_3dd14.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_3dd14.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_3dd14]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3dd14.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_3dd14.dir/CMakeCCompilerABI.c.o  -o cmTC_3dd14 -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/6.2.1/lto-wrapper]
+  ignore line: [Target: x86_64-redhat-linux]
+  ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,objc,obj-c++,fortran,ada,go,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --disable-libgcj --with-isl --enable-libmpx --enable-gnu-indirect-function --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 6.2.1 20160916 (Red Hat 6.2.1-2) (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/6.2.1/:/usr/libexec/gcc/x86_64-redhat-linux/6.2.1/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/6.2.1/:/usr/lib/gcc/x86_64-redhat-linux/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/6.2.1/:/usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_3dd14' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/libexec/gcc/x86_64-redhat-linux/6.2.1/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/6.2.1/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/6.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYq9ThN.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_3dd14 /usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/6.2.1/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/6.2.1 -L/usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../.. CMakeFiles/cmTC_3dd14.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-redhat-linux/6.2.1/crtend.o /usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../../../lib64/crtn.o]
+    arg [/usr/libexec/gcc/x86_64-redhat-linux/6.2.1/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/libexec/gcc/x86_64-redhat-linux/6.2.1/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/6.2.1/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccYq9ThN.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--no-add-needed] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_3dd14] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../../../lib64/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../../../lib64/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/6.2.1/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-redhat-linux/6.2.1] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/6.2.1]
+    arg [-L/usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../..] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../..]
+    arg [CMakeFiles/cmTC_3dd14.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/6.2.1/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../../../lib64/crtn.o] ==> ignore
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/6.2.1] ==> [/usr/lib/gcc/x86_64-redhat-linux/6.2.1]
+  collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../../../lib64] ==> [/usr/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/6.2.1/../../..] ==> [/usr/lib]
+  implicit libs: [c]
+  implicit dirs: [/usr/lib/gcc/x86_64-redhat-linux/6.2.1;/usr/lib64;/lib64;/usr/lib]
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /home/manh/Documents/fishout/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_3d090/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_3d090.dir/build.make CMakeFiles/cmTC_3d090.dir/build
+gmake[1]: Entering directory '/home/manh/Documents/fishout/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3d090.dir/feature_tests.c.o
+/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_3d090.dir/feature_tests.c.o   -c /home/manh/Documents/fishout/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_3d090
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3d090.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_3d090.dir/feature_tests.c.o  -o cmTC_3d090 -rdynamic 
+gmake[1]: Leaving directory '/home/manh/Documents/fishout/build/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /home/manh/Documents/fishout/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_af43c/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_af43c.dir/build.make CMakeFiles/cmTC_af43c.dir/build
+gmake[1]: Entering directory '/home/manh/Documents/fishout/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_af43c.dir/feature_tests.c.o
+/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_af43c.dir/feature_tests.c.o   -c /home/manh/Documents/fishout/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_af43c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_af43c.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_af43c.dir/feature_tests.c.o  -o cmTC_af43c -rdynamic 
+gmake[1]: Leaving directory '/home/manh/Documents/fishout/build/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /home/manh/Documents/fishout/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_5de67/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_5de67.dir/build.make CMakeFiles/cmTC_5de67.dir/build
+gmake[1]: Entering directory '/home/manh/Documents/fishout/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5de67.dir/feature_tests.c.o
+/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_5de67.dir/feature_tests.c.o   -c /home/manh/Documents/fishout/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_5de67
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5de67.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_5de67.dir/feature_tests.c.o  -o cmTC_5de67 -rdynamic 
+gmake[1]: Leaving directory '/home/manh/Documents/fishout/build/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros

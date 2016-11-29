@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdata.a  CMakeFiles/data.dir/m_data.c.o CMakeFiles/data.dir/m_array.c.o CMakeFiles/data.dir/m_string.c.o CMakeFiles/data.dir/m_map.c.o
+/usr/bin/ranlib libdata.a

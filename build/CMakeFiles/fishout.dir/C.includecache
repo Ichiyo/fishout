@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../data/m_string.h
+
+../game/game.h
+
+/home/manh/Documents/fishout/main.c
+game.h
+/home/manh/Documents/fishout/game.h
+m_string.h
+/home/manh/Documents/fishout/m_string.h
+

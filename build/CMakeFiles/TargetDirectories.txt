@@ -1,0 +1,15 @@
+/home/manh/Documents/fishout/build/CMakeFiles/edit_cache.dir
+/home/manh/Documents/fishout/build/CMakeFiles/rebuild_cache.dir
+/home/manh/Documents/fishout/build/CMakeFiles/fishout.dir
+/home/manh/Documents/fishout/build/math/CMakeFiles/rebuild_cache.dir
+/home/manh/Documents/fishout/build/math/CMakeFiles/edit_cache.dir
+/home/manh/Documents/fishout/build/math/CMakeFiles/math.dir
+/home/manh/Documents/fishout/build/data/CMakeFiles/edit_cache.dir
+/home/manh/Documents/fishout/build/data/CMakeFiles/rebuild_cache.dir
+/home/manh/Documents/fishout/build/data/CMakeFiles/data.dir
+/home/manh/Documents/fishout/build/utils/CMakeFiles/edit_cache.dir
+/home/manh/Documents/fishout/build/utils/CMakeFiles/rebuild_cache.dir
+/home/manh/Documents/fishout/build/utils/CMakeFiles/utils.dir
+/home/manh/Documents/fishout/build/game/CMakeFiles/edit_cache.dir
+/home/manh/Documents/fishout/build/game/CMakeFiles/rebuild_cache.dir
+/home/manh/Documents/fishout/build/game/CMakeFiles/game.dir
