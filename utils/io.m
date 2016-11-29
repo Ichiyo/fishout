@@ -8,8 +8,7 @@ FILE* io_open_file(const char* path, char* mode)
 {
 	FILE* file = fopen([[[NSBundle mainBundle] pathForResource:[NSString stringWithUTF8String:path]
                                                               ofType:nil inDirectory:nil] UTF8String], mode);
-  return file;     
+  return file;
 }
 
 #endif
-

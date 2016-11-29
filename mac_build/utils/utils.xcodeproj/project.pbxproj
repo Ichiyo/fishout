@@ -1,0 +1,688 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		AB3102B26ABA40C38CBA924F /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = DC2960CCE65042E6B3DCD8D3 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				FCC36B5672E9482380452F2D /* CMake Rules */,
+			);
+			dependencies = (
+				B023E2CA85D8446698033A64 /* PBXTargetDependency */,
+				95E06868C61A468793E96C0C /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		D73EE6E8CB534E6DA1B735BC /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = F70D4AC4BF3E489A99187218 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				64E6C69AE6A648D28236D727 /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		556239F61DFA438DA300816F /* /Users/manhtran/Documents/fishout/utils/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = AF8C52FAD4DF4289855BEFC5 /* /Users/manhtran/Documents/fishout/utils/CMakeLists.txt */; settings = {COMPILER_FLAGS = ""; }; };
+		9C1BE31285F048F3922C3D34 /* /Users/manhtran/Documents/fishout/utils/io.c */ = {isa = PBXBuildFile; fileRef = 168767A8017945D5892BF224 /* /Users/manhtran/Documents/fishout/utils/io.c */; settings = {COMPILER_FLAGS = ""; }; };
+		E3EA436D3583472DACDA9063 /* /Users/manhtran/Documents/fishout/utils/io.m */ = {isa = PBXBuildFile; fileRef = 8053EED3B1FB4D81B071A47B /* /Users/manhtran/Documents/fishout/utils/io.m */; settings = {COMPILER_FLAGS = ""; }; };
+		ECF1EC3EA29F408EAF663356 /* /Users/manhtran/Documents/fishout/utils/xml.c */ = {isa = PBXBuildFile; fileRef = 97CAA3FE942A4FA6A7C62391 /* /Users/manhtran/Documents/fishout/utils/xml.c */; settings = {COMPILER_FLAGS = ""; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		9B16CB448DE84AE39503F3B5 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		9FFBC3DDD9084F299900D0D5 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		C5503541EBC148288FE98ADD /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		E2F64E83F666408A91343A86 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		FE188C60263B4B26BAB1B87E = {
+			isa = PBXBuildStyle;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		88AC001F40A64D0FB98DAB3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6186492069CB427CA005894C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D73EE6E8CB534E6DA1B735BC;
+			remoteInfo = ZERO_CHECK;
+		};
+		9FEC645903E24F7D86E01C43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6186492069CB427CA005894C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A8FA2AE56154CCE8B88696C;
+			remoteInfo = utils;
+		};
+		C9889AFE45B8443C985A81BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6186492069CB427CA005894C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D73EE6E8CB534E6DA1B735BC;
+			remoteInfo = ZERO_CHECK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		168767A8017945D5892BF224 /* /Users/manhtran/Documents/fishout/utils/io.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = io.c; path = io.c; sourceTree = SOURCE_ROOT; };
+		2DC0D38C358C449980C248DA /* /Users/manhtran/Documents/fishout/utils/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		8053EED3B1FB4D81B071A47B /* /Users/manhtran/Documents/fishout/utils/io.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = io.m; path = io.m; sourceTree = SOURCE_ROOT; };
+		97CAA3FE942A4FA6A7C62391 /* /Users/manhtran/Documents/fishout/utils/xml.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = xml.c; path = xml.c; sourceTree = SOURCE_ROOT; };
+		A7144ABDAF4A4157B4800148 /* utils */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libutils.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF8C52FAD4DF4289855BEFC5 /* /Users/manhtran/Documents/fishout/utils/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		BD17C6552FFA493A930C266B /* /Users/manhtran/Documents/fishout/utils/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		02032F7AD2F3492E84215754 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				426D09FC972846398D9E502D /* Source Files */,
+				AF8C52FAD4DF4289855BEFC5 /* /Users/manhtran/Documents/fishout/utils/CMakeLists.txt */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		426D09FC972846398D9E502D /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				168767A8017945D5892BF224 /* /Users/manhtran/Documents/fishout/utils/io.c */,
+				8053EED3B1FB4D81B071A47B /* /Users/manhtran/Documents/fishout/utils/io.m */,
+				97CAA3FE942A4FA6A7C62391 /* /Users/manhtran/Documents/fishout/utils/xml.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		46A9A1DC75284483877FA5E4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				02032F7AD2F3492E84215754 /* utils */,
+				72DF8452CD0245EABCB52352 /* ALL_BUILD */,
+				815666F1FE55476FAD8C20FA /* ZERO_CHECK */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		72DF8452CD0245EABCB52352 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				E211805C8B7449779789E265 /* CMake Rules */,
+				BD17C6552FFA493A930C266B /* /Users/manhtran/Documents/fishout/utils/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		815666F1FE55476FAD8C20FA /* ZERO_CHECK */ = {
+			isa = PBXGroup;
+			children = (
+				8DC71AC3A9BC48128F22D52F /* CMake Rules */,
+				2DC0D38C358C449980C248DA /* /Users/manhtran/Documents/fishout/utils/CMakeLists.txt */,
+			);
+			name = ZERO_CHECK;
+			sourceTree = "<group>";
+		};
+		8DC71AC3A9BC48128F22D52F /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		B6CD42F2743C42578463B465 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A7144ABDAF4A4157B4800148 /* utils */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D8D5892A952B4826AE881441 = {
+			isa = PBXGroup;
+			children = (
+				46A9A1DC75284483877FA5E4 /* Sources */,
+				E3F7E643B4384B7C8BEB485C /* Resources */,
+				B6CD42F2743C42578463B465 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E211805C8B7449779789E265 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		E3F7E643B4384B7C8BEB485C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1A8FA2AE56154CCE8B88696C /* utils */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DDAE060D9D84A17A53D9170 /* Build configuration list for PBXNativeTarget "utils" */;
+			buildPhases = (
+				262EF142D5D14708AC82D1B3 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5FD9101F09944D3F819BAE54 /* PBXTargetDependency */,
+			);
+			name = utils;
+			productName = utils;
+			productReference = A7144ABDAF4A4157B4800148 /* utils */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6186492069CB427CA005894C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0810;
+			};
+			buildConfigurationList = F2290822B3FD486C89275FF4 /* Build configuration list for PBXProject "utils" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				E2F64E83F666408A91343A86 /* Debug */,
+				C5503541EBC148288FE98ADD /* Release */,
+				9FFBC3DDD9084F299900D0D5 /* MinSizeRel */,
+				9B16CB448DE84AE39503F3B5 /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = D8D5892A952B4826AE881441;
+			projectDirPath = ../../utils;
+			projectRoot = "";
+			targets = (
+				AB3102B26ABA40C38CBA924F /* ALL_BUILD */,
+				D73EE6E8CB534E6DA1B735BC /* ZERO_CHECK */,
+				1A8FA2AE56154CCE8B88696C /* utils */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33161A0D58EF402D910C7329 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		52A8A17F0D1B4F72B5AD0420 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		64E6C69AE6A648D28236D727 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/manhtran/Documents/fishout/mac_build/utils -f /Users/manhtran/Documents/fishout/mac_build/utils/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		FCC36B5672E9482380452F2D /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/manhtran/Documents/fishout/mac_build/utils -f /Users/manhtran/Documents/fishout/mac_build/utils/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		262EF142D5D14708AC82D1B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C1BE31285F048F3922C3D34 /* /Users/manhtran/Documents/fishout/utils/io.c */,
+				E3EA436D3583472DACDA9063 /* /Users/manhtran/Documents/fishout/utils/io.m */,
+				ECF1EC3EA29F408EAF663356 /* /Users/manhtran/Documents/fishout/utils/xml.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5FD9101F09944D3F819BAE54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D73EE6E8CB534E6DA1B735BC /* ZERO_CHECK */;
+			targetProxy = 88AC001F40A64D0FB98DAB3D /* PBXContainerItemProxy */;
+		};
+		95E06868C61A468793E96C0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A8FA2AE56154CCE8B88696C /* utils */;
+			targetProxy = 9FEC645903E24F7D86E01C43 /* PBXContainerItemProxy */;
+		};
+		B023E2CA85D8446698033A64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D73EE6E8CB534E6DA1B735BC /* ZERO_CHECK */;
+			targetProxy = C9889AFE45B8443C985A81BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0505D6F447D9400CB06FDA06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/manhtran/Documents/fishout/utils/../platform,/Users/manhtran/Documents/fishout/utils/../data);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/manhtran/Documents/fishout/mac_build/utils;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		20705F6A1C4B468893948949 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/manhtran/Documents/fishout/utils/../platform,/Users/manhtran/Documents/fishout/utils/../data);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/manhtran/Documents/fishout/mac_build/utils;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		263418DE423543CE8575BB0E /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/manhtran/Documents/fishout/utils/../platform,/Users/manhtran/Documents/fishout/utils/../data);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/manhtran/Documents/fishout/mac_build/utils;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		430ECECA29124C549AFF4670 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/manhtran/Documents/fishout/utils/../platform,/Users/manhtran/Documents/fishout/utils/../data);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/manhtran/Documents/fishout/mac_build/utils;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		6E176BBEDD8445A4893FE09A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/manhtran/Documents/fishout/utils/../platform,/Users/manhtran/Documents/fishout/utils/../data);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/manhtran/Documents/fishout/mac_build/utils;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		7CCC40980194426BB1B12109 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/manhtran/Documents/fishout/utils/../platform,/Users/manhtran/Documents/fishout/utils/../data);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/manhtran/Documents/fishout/mac_build/utils;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		85CFD7D3249B46F59859D59E /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/manhtran/Documents/fishout/utils/../platform,/Users/manhtran/Documents/fishout/utils/../data);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/manhtran/Documents/fishout/mac_build/utils;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		868F6477A4FD4FE58D86B674 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/manhtran/Documents/fishout/mac_build/utils/build;
+			};
+			name = MinSizeRel;
+		};
+		8EBE82CBE06A4AD286CCB783 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/manhtran/Documents/fishout/utils/../platform,/Users/manhtran/Documents/fishout/utils/../data);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = utils;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/manhtran/Documents/fishout/mac_build/utils;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		96E98663166748B1984C4296 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/manhtran/Documents/fishout/utils/../platform,/Users/manhtran/Documents/fishout/utils/../data);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = utils;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/manhtran/Documents/fishout/mac_build/utils;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		A4D52B9F2D4343B48EC0C86A /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/manhtran/Documents/fishout/utils/../platform,/Users/manhtran/Documents/fishout/utils/../data);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = utils;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/manhtran/Documents/fishout/mac_build/utils;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		B162CCB034844A449DB99631 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/manhtran/Documents/fishout/mac_build/utils/build;
+			};
+			name = Release;
+		};
+		B1F1A18856894E3C90CC3786 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/manhtran/Documents/fishout/utils/../platform,/Users/manhtran/Documents/fishout/utils/../data);
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/manhtran/Documents/fishout/mac_build/utils;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		BC816A82B7D84411A179CBA6 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/manhtran/Documents/fishout/mac_build/utils/build;
+			};
+			name = RelWithDebInfo;
+		};
+		BE553F22693844A5811B6BAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/manhtran/Documents/fishout/mac_build/utils/build;
+			};
+			name = Debug;
+		};
+		D0144B69EDF8427AB04348BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/manhtran/Documents/fishout/utils/../platform,/Users/manhtran/Documents/fishout/utils/../data);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = utils;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/manhtran/Documents/fishout/mac_build/utils;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3DDAE060D9D84A17A53D9170 /* Build configuration list for PBXNativeTarget "utils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96E98663166748B1984C4296 /* Debug */,
+				D0144B69EDF8427AB04348BF /* Release */,
+				8EBE82CBE06A4AD286CCB783 /* MinSizeRel */,
+				A4D52B9F2D4343B48EC0C86A /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DC2960CCE65042E6B3DCD8D3 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0505D6F447D9400CB06FDA06 /* Debug */,
+				B1F1A18856894E3C90CC3786 /* Release */,
+				263418DE423543CE8575BB0E /* MinSizeRel */,
+				85CFD7D3249B46F59859D59E /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F2290822B3FD486C89275FF4 /* Build configuration list for PBXProject "utils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE553F22693844A5811B6BAF /* Debug */,
+				B162CCB034844A449DB99631 /* Release */,
+				868F6477A4FD4FE58D86B674 /* MinSizeRel */,
+				BC816A82B7D84411A179CBA6 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F70D4AC4BF3E489A99187218 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E176BBEDD8445A4893FE09A /* Debug */,
+				20705F6A1C4B468893948949 /* Release */,
+				430ECECA29124C549AFF4670 /* MinSizeRel */,
+				7CCC40980194426BB1B12109 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6186492069CB427CA005894C /* Project object */;
+}

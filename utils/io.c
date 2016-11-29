@@ -20,13 +20,13 @@ m_string* io_file_to_string(const char* path)
 	m_string* ret = m_string_new();
 	char buff[io_read_block_size];
 	int count = 0;
-	
-	while(count = fread(buff, 1, io_read_block_size, file))
+
+	while((count = fread(buff, 1, io_read_block_size, file)))
 	{
 		count -= count == io_read_block_size ? 0 : 1;
 		m_string_cat_char_array_with_len(ret, buff, count);
 	}
-	
+
 	fclose(file);
 	return ret;
 }

@@ -2,6 +2,8 @@
 #include "graphic.h"
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_opengl.h>
+#include "model.h"
+#include "io.h"
 
 void game_init()
 {
@@ -14,7 +16,18 @@ void game_init()
 	SDL_Window* window = SDL_CreateWindow("Game", 100, 100, 800, 600, SDL_WINDOW_OPENGL);
 	SDL_GLContext context = SDL_GL_CreateContext(window);
 	SDL_Event windowEvent;
+
+	int i;
+	collada_context* ctx = collada_context_new("res/sphere.dae");
+	m_array* ret = collada_context_parse(ctx);
+	for(i = 0; i < ret->len; i++)
+	{
+	    model_mesh_free(m_array_get(ret, model_mesh*, i));
+	}
+	m_array_free(ret);
+	collada_context_free(ctx);
 	
+
 	/* main loop */
 	while (1)
 	{
@@ -22,7 +35,7 @@ void game_init()
 		glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 		glClearStencil(0);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-		
+
 		/* process exit event */
 		if (SDL_PollEvent(&windowEvent))
 		{
@@ -32,11 +45,11 @@ void game_init()
 		}
 		/* run game loop */
 		game_loop();
-			
+
 		/* swap window buffer */
 		SDL_GL_SwapWindow(window);
 	}
-	
+
 	/* free gl context */
 	SDL_GL_DeleteContext(context);
 	SDL_Quit();

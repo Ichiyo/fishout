@@ -11,6 +11,10 @@ endif()
 
 if(MACOSX)
 
+if(${USER_BUILD_MAC_OS} MATCHES “true”)
+link_directories(/usr/local/lib)
+endif()
+
 find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)
 include_directories( ${OPENGL_INCLUDE_DIRS}  ${GLUT_INCLUDE_DIRS} )

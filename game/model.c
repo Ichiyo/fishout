@@ -2,6 +2,7 @@
 #include "xml.h"
 #include "m_map.h"
 #include "conv.h"
+#include <stdlib.h>
 
 collada_context* collada_context_new(char* file)
 {
