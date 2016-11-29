@@ -15,6 +15,8 @@ void m_string_reserve(m_string* s, unsigned long len);
 void m_string_cat_char_array(m_string* s, char* in);
 void m_string_cat_char_array_with_len(m_string* s, char* in, unsigned long in_len);
 void m_string_cat_string(m_string* s, m_string* in);
+void m_string_replace_char_array(m_string* s, char* search, char* replace);
+int m_string_contain_char_array(m_string* s, char* search);
 void m_string_free(m_string* s);
 
 #endif
