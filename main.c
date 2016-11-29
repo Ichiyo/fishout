@@ -1,10 +1,4 @@
 #include "game.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include "xml.h"
-#include "m_map.h"
-#include "m_string.h"
-#include "model.h"
 
 int main()
 {

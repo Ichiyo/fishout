@@ -31,8 +31,8 @@ typedef struct model_skin_join
 
 typedef struct model_mesh
 {
-	GLint vao;
-	GLint vbo;
+	GLuint vao;
+	GLuint vbo;
 	m_matrix4 bind_shape_matrix;
 	model_skin_join* skeleton;
 	int vertices_count;
