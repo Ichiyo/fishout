@@ -80,6 +80,30 @@ int m_map_contain_key(m_map* map, void* key, unsigned long key_size)
 	return 0;
 }
 
+void m_map_remove_key(m_map* map, void* key, unsigned long key_size)
+{
+	int i;
+	int index = hash(key, key_size);
+	m_array* keys = m_array_get(map->keys, m_array*, index);
+	m_array* datas = m_array_get(map->datas, m_array*, index);
+
+	for(i = 0; i < keys->len; i++)
+	{
+		m_data* keys_i = m_array_get(keys, m_data*, i);
+		if(keys_i->len == key_size && memcmp(key, keys_i->bytes, key_size) == 0)
+		{
+			m_array_remove_index(keys, i);
+			m_data_free(keys_i);
+			m_array_remove_index(datas, i);
+			goto finish;
+		}
+	}
+finish:
+	;
+}
+
+static void** null_pointer = 0;
+
 void* m_map_get_pointer(m_map* map, void* key, unsigned long key_size)
 {
 	int i;
@@ -95,8 +119,7 @@ void* m_map_get_pointer(m_map* map, void* key, unsigned long key_size)
 			return (char*)datas->data + i * datas->item_size;
 		}
 	}
-
-	return 0;
+	return &null_pointer;
 }
 
 void m_map_free(m_map* map)

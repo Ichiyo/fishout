@@ -7,4 +7,8 @@
   char var[10]; \
   snprintf(var, sizeof(var), "%d", i);
 
+#define int_to_chars_style(var,i,style) \
+  char var[10]; \
+  snprintf(var, sizeof(var), style, i);
+
 #endif

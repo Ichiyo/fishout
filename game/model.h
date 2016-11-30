@@ -33,6 +33,7 @@ typedef struct model_mesh
 {
 	GLuint vao;
 	GLuint vbo;
+	m_string* name;
 	m_matrix4 bind_shape_matrix;
 	model_skin_join* skeleton;
 	int vertices_count;

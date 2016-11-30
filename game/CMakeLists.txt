@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 2.8.9)
 project (game C)
 
+add_definitions(-DUSE_SDL)
+
 if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
     set(WINDOWS TRUE)
 elseif (${CMAKE_SYSTEM_NAME} MATCHES "Linux")

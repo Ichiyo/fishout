@@ -928,6 +928,7 @@ static model_mesh* new_model_mesh(dae_visual_node* node, model_mesh* parent, mod
 	ret->vao = 0;
 	ret->vbo = 0;
 	ret->joins_per_vertex = 0;
+	ret->name = m_string_new_from_string(node->name);
 
 	if(node->join)
 	{
@@ -990,6 +991,7 @@ void model_mesh_free(model_mesh* mesh)
 		model_mesh_free(m_array_get(mesh->sub_meshs, model_mesh*, i));
 	}
 	m_array_free(mesh->sub_meshs);
+	m_string_free(mesh->name);
 	free(mesh);
 }
 

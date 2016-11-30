@@ -10,6 +10,13 @@
 #include "quaternion.h"
 #include <math.h>
 
+typedef m_vector3 vector3_t;
+typedef m_vector2 vector2_t;
+typedef m_vector4 vector4_t;
+typedef m_matrix4 matrix4_t;
+typedef m_matrix3 matrix3_t;
+typedef quaternion quaternion_t;
+
 #ifdef __cplusplus
 extern "C" {
 #endif

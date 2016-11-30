@@ -4,6 +4,10 @@
 #include <SDL2/SDL_opengl.h>
 #include "model.h"
 #include "io.h"
+#include "conv.h"
+#include "m_string.h"
+#include "shader.h"
+#include "material.h"
 
 void game_init()
 {
@@ -17,16 +21,31 @@ void game_init()
 	SDL_GLContext context = SDL_GL_CreateContext(window);
 	SDL_Event windowEvent;
 
-	int i;
-	collada_context* ctx = collada_context_new("res/sphere.dae");
-	m_array* ret = collada_context_parse(ctx);
-	for(i = 0; i < ret->len; i++)
+	shader_3d_default_param_t param =
 	{
-	    model_mesh_free(m_array_get(ret, model_mesh*, i));
-	}
-	m_array_free(ret);
-	collada_context_free(ctx);
-	
+		.has_texture = 1,
+		.has_shadow = 1,
+		.use_model_index = 0,
+		.number_join_ids = 3,
+		.number_joins = 20,
+		.number_direction_lights = 1,
+		.number_point_lights = 1,
+		.number_spot_lights = 1
+	};
+	shader_t* s = shader_3d_default_new(param);
+	if(s) shader_free(s);
+
+	//
+	// int i;
+	// collada_context* ctx = collada_context_new("res/sphere.dae");
+	// m_array* ret = collada_context_parse(ctx);
+	// for(i = 0; i < ret->len; i++)
+	// {
+	//     model_mesh_free(m_array_get(ret, model_mesh*, i));
+	// }
+	// m_array_free(ret);
+	// collada_context_free(ctx);
+
 
 	/* main loop */
 	while (1)

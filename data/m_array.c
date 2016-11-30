@@ -38,6 +38,14 @@ void m_array_copy(m_array* a, unsigned long index, void* out)
 	memcpy(out, a->data + index * a->item_size, a->item_size);
 }
 
+void m_array_remove_index(m_array* a, unsigned long index)
+{
+	if(index < 0 || index >= a->len) return;
+
+	if(index != a->len - 1) memmove(a->data + index * a->item_size, a->data + (index + 1) * a->item_size, (a->len - index - 1) * a->item_size);
+	a->len--;
+}
+
 void m_array_free(m_array* a)
 {
 	free(a->data);

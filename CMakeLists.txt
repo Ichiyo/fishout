@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 2.8.9)
 project (fishout C)
 
+add_definitions(-DUSE_SDL)
+
 add_subdirectory(math)
 add_subdirectory(data)
 add_subdirectory(utils)

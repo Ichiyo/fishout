@@ -8,6 +8,8 @@ typedef struct m_string
 	unsigned long allocated_len;
 } m_string;
 
+typedef m_string string_t;
+
 m_string* m_string_new();
 m_string* m_string_new_from_char_array(char* in);
 m_string* m_string_new_from_string(m_string* in);
