@@ -9,7 +9,7 @@
 typedef struct actor_t
 {
   /* render information */
-  array_t* meshs;
+  model_mesh* mesh;
   vector3_t position;
   vector3_t scale;
   quaternion_t quat;
@@ -28,6 +28,9 @@ typedef struct actor_t
 } actor_t;
 
 actor_t* actor_new();
+void actor_set_position(actor_t* actor, vector3_t vector);
+void actor_set_scale(actor_t* actor, vector3_t vector);
+void actor_add_child(actor_t* actor, actor_t* child);
 void actor_update(actor_t* actor, matrix4_t trans, int flag);
 void actor_free(actor_t* actor);
 

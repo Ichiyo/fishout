@@ -33,6 +33,7 @@ material_t* material_new()
   material_t* mat = malloc(sizeof(material_t));
   mat->diffuse = 0;
   mat->specular = 0;
+  mat->shininess = 0;
   return mat;
 }
 
@@ -70,28 +71,99 @@ shader_3d_default_context_t* shader_3d_default_context_new()
   shader_3d_default_context_t* ctx = malloc(sizeof(shader_3d_default_context_t));
   ctx->light_ctx = 0;
   ctx->shader = 0;
-  ctx->material = 0;
+  ctx->material = material_new();
   return ctx;
 }
 
-void shader_3d_default_context_use(shader_3d_default_context_t* ctx)
+void shader_3d_default_context_config_shader_mesh(shader_3d_default_context_t* ctx, model_mesh_t* mesh)
+{
+  shader_t* shader = ctx->shader;
+  int one_vertex_size = mesh->has_uvs ? (3 + 3 + 2 + 2 * mesh->joins_per_vertex) : (3 + 3 + 2 * mesh->joins_per_vertex);
+  shader_use(shader);
+
+  glBindVertexArray(mesh->gl_data->vao);
+  glBindBuffer(GL_ARRAY_BUFFER, mesh->gl_data->vbo);
+  GLint posAttrib = glGetAttribLocation(shader->id, "position");
+  glEnableVertexAttribArray(posAttrib);
+  glVertexAttribPointer(posAttrib, 3, GL_FLOAT, GL_FALSE, one_vertex_size * sizeof(GLfloat), 0);
+
+  GLint norAttrib = glGetAttribLocation(shader->id, "normal");
+  glEnableVertexAttribArray(norAttrib);
+  glVertexAttribPointer(norAttrib, 3, GL_FLOAT, GL_FALSE, one_vertex_size * sizeof(GLfloat), (void*)(3 * sizeof(GLfloat)));
+  if(mesh->has_uvs)
+  {
+    GLint texAttrib = glGetAttribLocation(shader->id, "texcoord");
+    glEnableVertexAttribArray(texAttrib);
+    glVertexAttribPointer(texAttrib, 2, GL_FLOAT, GL_FALSE, one_vertex_size * sizeof(GLfloat), (void*)(6 * sizeof(GLfloat)));
+  }
+
+  int offset = mesh->has_uvs ? 8 : 6;
+  for(int i = 0; i < mesh->joins_per_vertex; i++)
+  {
+    int_to_chars(id, i);
+    string_t* join_attr_name = m_string_new();
+    m_string_reserve(join_attr_name, 9);
+    m_string_cat_char_array(join_attr_name, "joinIds_");
+    m_string_cat_char_array(join_attr_name, id);
+    string_t* weight_attr_name = m_string_new();
+    m_string_reserve(weight_attr_name, 9);
+    m_string_cat_char_array(weight_attr_name, "weights_");
+    m_string_cat_char_array(weight_attr_name, id);
+
+    GLint joinIdAttrib = glGetAttribLocation(shader->id, join_attr_name->str);
+    glEnableVertexAttribArray(joinIdAttrib);
+    glVertexAttribPointer(joinIdAttrib, 1, GL_FLOAT, GL_FALSE, one_vertex_size * sizeof(GLfloat), (void*)(offset * sizeof(GLfloat)));
+    offset++;
+    GLint weightAttrib = glGetAttribLocation(shader->id, weight_attr_name->str);
+    glEnableVertexAttribArray(weightAttrib);
+    glVertexAttribPointer(weightAttrib, 1, GL_FLOAT, GL_FALSE, one_vertex_size * sizeof(GLfloat), (void*)(offset * sizeof(GLfloat)));
+    offset++;
+
+    m_string_free(join_attr_name);
+    m_string_free(weight_attr_name);
+  }
+
+  glBindBuffer(GL_ARRAY_BUFFER, 0);
+  glBindVertexArray(0);
+}
+
+int shader_3d_default_context_use(shader_3d_default_context_t* ctx)
 {
   int flag = shader_use(ctx->shader);
+  int reuse_shader = flag;
   /* setup light uniforms */
-  flag != ctx->light_ctx->update;
+  flag |= ctx->light_ctx->update;
   if(flag)
   {
     if(ctx->light_ctx->direction_lights->len)
     {
-      int total_size = ctx->light_ctx->direction_lights->len * sizeof(direction_light_t);
-      GLuint address = glGetUniformLocation(ctx->shader->id, "dirLights");
-      glUniform1fv(address, total_size, ctx->light_ctx->direction_lights->data);
+      direction_light_t d = m_array_get(ctx->light_ctx->direction_lights, direction_light_t, 0);
+      GLuint address = glGetUniformLocation(ctx->shader->id, "dirLights[0].direction");
+      glUniform3fv(address, 1, d.direction.v);
+      address = glGetUniformLocation(ctx->shader->id, "dirLights[0].ambient");
+      glUniform3fv(address, 1, d.ambient.v);
+      address = glGetUniformLocation(ctx->shader->id, "dirLights[0].diffuse");
+      glUniform3fv(address, 1, d.diffuse.v);
+      address = glGetUniformLocation(ctx->shader->id, "dirLights[0].specular");
+      glUniform3fv(address, 1, d.specular.v);
     }
     if(ctx->light_ctx->point_lights->len)
     {
-      int total_size = ctx->light_ctx->point_lights->len * sizeof(point_light_t);
-      GLuint address = glGetUniformLocation(ctx->shader->id, "pointLights");
-      glUniform1fv(address, total_size, ctx->light_ctx->point_lights->data);
+      point_light_t p = m_array_get(ctx->light_ctx->point_lights, point_light_t, 0);
+      GLuint address = glGetUniformLocation(ctx->shader->id, "pointLights[0].position");
+      glUniform3fv(address, 1, p.position.v);
+      address = glGetUniformLocation(ctx->shader->id, "pointLights[0].constant");
+      glUniform1fv(address, 1, &p.constant);
+      address = glGetUniformLocation(ctx->shader->id, "pointLights[0].linear");
+      glUniform1fv(address, 1, &p.linear);
+      address = glGetUniformLocation(ctx->shader->id, "pointLights[0].quadratic");
+      glUniform1fv(address, 1, &p.quadratic);
+      address = glGetUniformLocation(ctx->shader->id, "pointLights[0].ambient");
+      glUniform3fv(address, 1, p.ambient.v);
+      address = glGetUniformLocation(ctx->shader->id, "pointLights[0].diffuse");
+      glUniform3fv(address, 1, p.diffuse.v);
+      address = glGetUniformLocation(ctx->shader->id, "pointLights[0].specular");
+      glUniform3fv(address, 1, p.specular.v);
     }
     if(ctx->light_ctx->spot_lights->len)
     {
@@ -103,15 +175,18 @@ void shader_3d_default_context_use(shader_3d_default_context_t* ctx)
 
     glUniform1i(glGetUniformLocation(ctx->shader->id, "material.diffuse"), 0);
     glUniform1i(glGetUniformLocation(ctx->shader->id, "material.specular"), 1);
+    glUniform1fv(glGetUniformLocation(ctx->shader->id, "material.shininess"), 1, &ctx->material->shininess);
   }
   /* setup texture uniform */
   if(ctx->material->diffuse) texture_bind(ctx->material->diffuse, 0);
   if(ctx->material->specular) texture_bind(ctx->material->specular, 1);
+
+  return reuse_shader;
 }
 
 void shader_3d_default_context_free(shader_3d_default_context_t* ctx)
 {
-  if(ctx->material) material_free(ctx->material);
+  material_free(ctx->material);
   free(ctx);
 }
 
@@ -170,7 +245,21 @@ scene_material_context_t* scene_material_context_new()
   scene_material_context_t* ctx = malloc(sizeof(scene_material_context_t));
   ctx->lights = m_array_new(sizeof(light_context_t*));
   ctx->shaders = m_array_new(sizeof(shader_t*));
+  ctx->id_to_shader = m_map_new(sizeof(shader_t*));
+  ctx->id_to_light_ctx = m_map_new(sizeof(light_context_t*));
   return ctx;
+}
+
+void scene_material_context_add_light_context(scene_material_context_t* ctx, int id, light_context_t* light_ctx)
+{
+  m_array_push(ctx->lights, &light_ctx);
+  m_map_set(ctx->id_to_light_ctx, qpkey(id), &light_ctx);
+}
+
+void scene_material_context_add_shader(scene_material_context_t* ctx, int id, shader_t* shader)
+{
+  m_array_push(ctx->shaders, &shader);
+  m_map_set(ctx->id_to_shader, qpkey(id), &shader);
 }
 
 void scene_material_context_free(scene_material_context_t* ctx)
@@ -181,10 +270,12 @@ void scene_material_context_free(scene_material_context_t* ctx)
     shader_free(m_array_get(ctx->shaders, shader_t*, i));
   }
   m_array_free(ctx->shaders);
+  m_map_free(ctx->id_to_shader);
   for(i = 0; i < ctx->lights->len; i++)
   {
     light_context_free(m_array_get(ctx->lights, light_context_t*, i));
   }
   m_array_free(ctx->lights);
+  m_map_free(ctx->id_to_light_ctx);
   free(ctx);
 }

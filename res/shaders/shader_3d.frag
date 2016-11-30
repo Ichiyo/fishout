@@ -182,7 +182,7 @@ vec3 CalcPointLight(PointLight ulight, vec3 normal, vec3 fragPos, vec3 viewDir)
 #else
     vec3 ambient = ulight.ambient;
     vec3 diffuse = ulight.diffuse * diff;
-    vec3 specular = ulight.specular * spec;
+    vec3 specular = ulight.specular * spec * 0.0;
 #endif
     ambient *= attenuation;
     diffuse *= attenuation;
@@ -214,7 +214,7 @@ vec3 CalcSpotLight(SpotLight ulight, vec3 normal, vec3 fragPos, vec3 viewDir)
 #else
     vec3 ambient = ulight.ambient;
     vec3 diffuse = ulight.diffuse * diff;
-    vec3 specular = ulight.specular * spec;
+    vec3 specular = ulight.specular * spec * 0.0;
 #endif
     ambient *= attenuation * intensity;
     diffuse *= attenuation * intensity;

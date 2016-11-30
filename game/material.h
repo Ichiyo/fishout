@@ -5,6 +5,8 @@
 #include "shader.h"
 #include "g_math.h"
 #include "m_array.h"
+#include "m_map.h"
+#include "model.h"
 
 typedef struct direction_light_t
 {
@@ -74,8 +76,10 @@ typedef struct shader_3d_default_context_t
 } shader_3d_default_context_t;
 
 shader_3d_default_context_t* shader_3d_default_context_new();
-void shader_3d_default_context_use(shader_3d_default_context_t* ctx);
+void shader_3d_default_context_config_shader_mesh(shader_3d_default_context_t* ctx, model_mesh_t* mesh);
+int shader_3d_default_context_use(shader_3d_default_context_t* ctx);
 void shader_3d_default_context_free(shader_3d_default_context_t* ctx);
+
 typedef struct shader_3d_default_param_t
 {
   int has_texture;
@@ -94,11 +98,15 @@ shader_t* shader_3d_default_new(shader_3d_default_param_t param);
 */
 typedef struct scene_material_context_t
 {
-  m_array* lights; // unique ref to lights
+  m_array* lights; // unique ref to light contexts
+  map_t* id_to_light_ctx;
   m_array* shaders; // unique ref to shaders
+  map_t* id_to_shader;
 } scene_material_context_t;
 
 scene_material_context_t* scene_material_context_new();
+void scene_material_context_add_light_context(scene_material_context_t* ctx, int id, light_context_t* light_ctx);
+void scene_material_context_add_shader(scene_material_context_t* ctx, int id, shader_t* shader);
 void scene_material_context_free(scene_material_context_t* ctx);
 
 #endif

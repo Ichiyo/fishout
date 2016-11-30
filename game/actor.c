@@ -7,7 +7,7 @@ actor_t* actor_new()
 {
   actor_t* actor = malloc(sizeof(actor_t));
   memset(&actor->position, 0, sizeof(actor->position));
-  actor->update = 0;
+  actor->update = 1;
   actor->scale = vector3_one;
   actor->quat = quaternion_identity;
   actor->model = matrix4_identity;
@@ -15,7 +15,26 @@ actor_t* actor_new()
   actor->fix_model = matrix4_identity;
   actor->children = m_array_new(sizeof(actor_t*));
   actor->parent = 0;
+  actor->mesh = 0;
   return actor;
+}
+
+void actor_set_position(actor_t* actor, vector3_t vector)
+{
+  actor->position = vector;
+  actor->update = 1;
+}
+
+void actor_set_scale(actor_t* actor, vector3_t vector)
+{
+  actor->scale = vector;
+  actor->update = 1;
+}
+
+void actor_add_child(actor_t* actor, actor_t* child)
+{
+  m_array_push(actor->children, &child);
+  child->parent = actor;
 }
 
 void actor_update(actor_t* actor, matrix4_t trans, int flag)
@@ -46,6 +65,8 @@ void actor_update(actor_t* actor, matrix4_t trans, int flag)
 
 void actor_free(actor_t* actor)
 {
+  int i;
+  if(actor->mesh) model_mesh_free(actor->mesh);
   m_array_free(actor->children);
   free(actor);
 }

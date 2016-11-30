@@ -744,9 +744,9 @@ static model_skin_join* new_model_skin_join(dae_visual_join* vj, model_skin_join
 	model_skin_join* ret = malloc(sizeof(model_skin_join));
 	ret->sid = m_string_new_from_string(vj->sid);
 	ret->uniform = m_string_new();
-	m_string_reserve(ret->uniform, 8);
+	m_string_reserve(ret->uniform, 9);
 	int_to_chars(s, vj->index);
-	m_string_cat_char_array(ret->uniform, "join[");
+	m_string_cat_char_array(ret->uniform, "joins[");
 	m_string_cat_char_array(ret->uniform, s);
 	m_string_cat_char_array(ret->uniform, "]");
 	ret->children = m_array_new(sizeof(model_skin_join*));
@@ -781,6 +781,7 @@ static void apply_skin_to_model_mesh(model_mesh* mesh, dae_controller_skin* skin
 	long total_size = 0;
 	int one_vertex_size = 0;
 	mesh->joins_per_vertex = skin->max_vcount;
+	mesh->join_count = skin->join_names->len;
 
 	if(geo_mesh->uvs->len) //has uvs
 	{
@@ -843,10 +844,10 @@ static void apply_skin_to_model_mesh(model_mesh* mesh, dae_controller_skin* skin
 		}
 	}
 
-	glGenVertexArrays(1, &mesh->vao);
-	glGenBuffers(1, &mesh->vbo);
+	glGenVertexArrays(1, &mesh->gl_data->vao);
+	glGenBuffers(1, &mesh->gl_data->vbo);
 
-	glBindBuffer(GL_ARRAY_BUFFER, mesh->vbo);
+	glBindBuffer(GL_ARRAY_BUFFER, mesh->gl_data->vbo);
 	glBufferData(GL_ARRAY_BUFFER, total_size, gl_data, GL_STATIC_DRAW);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	free(gl_data);
@@ -910,10 +911,10 @@ static void apply_geo_mesh_to_model_mesh(model_mesh* mesh, dae_geo_mesh* geo_mes
 		}
 	}
 
-	glGenVertexArrays(1, &mesh->vao);
-	glGenBuffers(1, &mesh->vbo);
+	glGenVertexArrays(1, &mesh->gl_data->vao);
+	glGenBuffers(1, &mesh->gl_data->vbo);
 
-	glBindBuffer(GL_ARRAY_BUFFER, mesh->vbo);
+	glBindBuffer(GL_ARRAY_BUFFER, mesh->gl_data->vbo);
 	glBufferData(GL_ARRAY_BUFFER, total_size, gl_data, GL_STATIC_DRAW);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	free(gl_data);
@@ -925,9 +926,12 @@ static model_mesh* new_model_mesh(dae_visual_node* node, model_mesh* parent, mod
 	model_mesh* ret = malloc(sizeof(model_mesh));
 	ret->sub_meshs = m_array_new(sizeof(model_mesh*));
 	ret->bind_shape_matrix = matrix4_identity;
-	ret->vao = 0;
-	ret->vbo = 0;
+	ret->gl_data = malloc(sizeof(model_mesh_gl_data_t));
+	ret->gl_data->vao = 0;
+	ret->gl_data->vbo = 0;
+	ret->gl_data->ref = 1;
 	ret->joins_per_vertex = 0;
+	ret->join_count = 0;
 	ret->name = m_string_new_from_string(node->name);
 
 	if(node->join)
@@ -982,8 +986,13 @@ static void model_skin_join_free(model_skin_join* join)
 void model_mesh_free(model_mesh* mesh)
 {
 	int i;
-	if(mesh->vbo) glDeleteBuffers(1, &mesh->vbo);
-  if(mesh->vao) glDeleteVertexArrays(1, &mesh->vao);
+	mesh->gl_data->ref--;
+	if(mesh->gl_data->ref <= 0)
+	{
+		if(mesh->gl_data->vbo) glDeleteBuffers(1, &mesh->gl_data->vbo);
+	  if(mesh->gl_data->vao) glDeleteVertexArrays(1, &mesh->gl_data->vao);
+		free(mesh->gl_data);
+	}
 	if(mesh->skeleton) model_skin_join_free(mesh->skeleton);
 
 	for(i = 0; i < mesh->sub_meshs->len; i++)
@@ -1025,6 +1034,104 @@ m_array* collada_context_parse(collada_context* context)
 	/* free up */
 	free_dae_context(dae_ctx);
 	return ret;
+}
+
+static model_skin_join* model_skin_join_clone(model_skin_join* src, model_skin_join* parent)
+{
+	int i;
+	model_skin_join* ret = malloc(sizeof(model_skin_join));
+	ret->sid = m_string_new_from_string(src->sid);
+	ret->uniform = m_string_new_from_string(src->uniform);
+	ret->ref = src->ref;
+	ret->bind_pose = src->bind_pose;
+	ret->inverse_bind_pose = src->inverse_bind_pose;
+	ret->world_matrix = src->world_matrix;
+	ret->final_matrix = src->final_matrix;
+	ret->children = m_array_new(sizeof(model_skin_join*));
+	ret->parent = 0;
+	if(!parent)
+	{
+		parent = ret;
+	}
+	else
+	{
+		m_array_push(parent->children, &ret);
+		ret->parent = parent;
+	}
+	for(i = 0; i < src->children->len; i++)
+	{
+		model_skin_join_clone(m_array_get(src->children, model_skin_join*, i), ret);
+	}
+	return ret;
+}
+
+static model_mesh* model_mesh_clone_s(model_mesh* src, model_mesh* des_parent)
+{
+	int i;
+	model_mesh* mesh = malloc(sizeof(model_mesh));
+	mesh->gl_data = src->gl_data;
+	mesh->gl_data->ref++;
+	mesh->name = m_string_new_from_string(src->name);
+	mesh->bind_shape_matrix = src->bind_shape_matrix;
+	mesh->vertices_count = src->vertices_count;
+	mesh->has_uvs = src->has_uvs;
+	mesh->joins_per_vertex = src->joins_per_vertex;
+	mesh->join_count = src->join_count;
+	mesh->sub_meshs = m_array_new(sizeof(model_mesh*));
+	mesh->parent = 0;
+	if(src->skeleton)
+	{
+		if(!des_parent)
+		{
+			model_skin_join* skeleton = model_skin_join_clone(src->skeleton, 0);
+			mesh->skeleton = skeleton;
+		}
+		else mesh->skeleton = des_parent->skeleton;
+	}
+	else mesh->skeleton = 0;
+	if(!des_parent)
+	{
+		des_parent = mesh;
+	}
+	else
+	{
+		m_array_push(des_parent->sub_meshs, &mesh);
+		mesh->parent = des_parent;
+	}
+	for(i = 0; i < src->sub_meshs->len; i++)
+	{
+		model_mesh_clone_s(m_array_get(src->sub_meshs, model_mesh*, i), mesh);
+	}
+	return mesh;
+}
+
+model_mesh* model_mesh_clone(model_mesh* mesh)
+{
+	return model_mesh_clone_s(mesh, 0);
+}
+
+void model_skin_join_send_gl_data(model_skin_join_t* join, model_mesh_t* mesh, shader_t* shader)
+{
+	int i;
+	join->world_matrix = matrix4_identity;
+	if(join->parent)
+	{
+	  join->world_matrix = join->parent->world_matrix;
+	}
+
+	join->world_matrix = matrix4_mul(join->world_matrix, join->bind_pose);
+
+	join->final_matrix = join->world_matrix;
+	join->final_matrix = matrix4_mul(join->final_matrix, join->inverse_bind_pose);
+	join->final_matrix = matrix4_mul(mesh->bind_shape_matrix, join->final_matrix);
+
+	GLint uniform = glGetUniformLocation(shader->id, join->uniform->str);
+	glUniformMatrix4fv(uniform, 1, GL_FALSE, join->final_matrix.m);
+
+	for(i = 0; i < join->children->len; i++)
+	{
+		model_skin_join_send_gl_data(m_array_get(join->children, model_skin_join_t*, i), mesh, shader);
+	}
 }
 
 void collada_context_free(collada_context* ctx)
