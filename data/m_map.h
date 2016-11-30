@@ -41,9 +41,9 @@ void m_map_free(m_map* map);
 
 /* quick key and key_size from string literal
 	 e.g :
-	 qlkey("1234") ~ &"1234",sizeof("1234")-1
+	 qlkey("1234") ~ "1234",sizeof("1234")-1
 */
-#define qlkey(s) &s,sizeof(s)-1
+#define qlkey(s) s,sizeof(s)-1
 
 /* quick key and key_size from char pointer
 	 e.g :

@@ -1,7 +1,6 @@
 #include "game.h"
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_opengl.h>
-#include "texture.h"
 
 int main()
 {
@@ -15,47 +14,38 @@ int main()
 	SDL_GLContext context = SDL_GL_CreateContext(window);
 	SDL_Event windowEvent;
 
-	// shader_3d_default_param_t param =
-	// {
-	// 	.has_texture = 1,
-	// 	.has_shadow = 1,
-	// 	.use_model_index = 0,
-	// 	.number_join_ids = 3,
-	// 	.number_joins = 20,
-	// 	.number_direction_lights = 1,
-	// 	.number_point_lights = 1,
-	// 	.number_spot_lights = 1
-	// };
-	// shader_t* s = shader_3d_default_new(param);
-	// if(s) shader_free(s);
-
-	//
-	// int i;
-	// collada_context* ctx = collada_context_new("res/model/kai.dae");
-	// m_array* ret = collada_context_parse(ctx);
-	// for(i = 0; i < ret->len; i++)
-	// {
-	//     model_mesh_free(m_array_get(ret, model_mesh*, i));
-	// }
-	// m_array_free(ret);
-	// collada_context_free(ctx);
-
 	game_t* game = game_new();
-
+	int key_up = 1;
 	/* main loop */
 	while (1)
 	{
-		/* clear screen */
-		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-		glClearStencil(0);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-
 		/* process exit event */
 		if (SDL_PollEvent(&windowEvent))
 		{
 			if (windowEvent.type == SDL_QUIT) break;
 			if (windowEvent.type == SDL_KEYUP &&
 				windowEvent.key.keysym.sym == SDLK_ESCAPE) break;
+
+			if (windowEvent.type == SDL_KEYUP)
+			{
+				key_up = 1;
+				keyboard_event_t e =
+				{
+					windowEvent.key.keysym.sym,
+					keyboard_event_up
+				};
+        game_input_keyboard(game, e);
+      }
+			if(windowEvent.type == SDL_KEYDOWN)
+			{
+			 	keyboard_event_t e =
+				{
+					windowEvent.key.keysym.sym,
+					key_up ? keyboard_event_down : keyboard_event_hold
+				};
+				key_up = 0;
+				game_input_keyboard(game, e);
+			}
 		}
 		/* run game loop */
 		game_loop(game);

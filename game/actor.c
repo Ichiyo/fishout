@@ -31,6 +31,12 @@ void actor_set_scale(actor_t* actor, vector3_t vector)
   actor->update = 1;
 }
 
+void actor_set_quat(actor_t* actor, quaternion_t quat)
+{
+  actor->quat = quat;
+  actor->update = 1;
+}
+
 void actor_add_child(actor_t* actor, actor_t* child)
 {
   m_array_push(actor->children, &child);

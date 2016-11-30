@@ -138,7 +138,7 @@ vec3 CalcDirLight(DirLight ulight, vec3 normal, vec3 viewDir)
    vec3 color = vec3(1.0, 1.0, 1.0);
    vec3 spec_color = vec3(0.0, 0.0, 0.0);
 #endif
-   vec3 lightDir = normalize(ulight.direction - FragPos);
+   vec3 lightDir = normalize(-ulight.direction);
 
    // Diffuse shading
    float diff = max(dot(normal, lightDir), 0.0);
@@ -156,8 +156,8 @@ vec3 CalcDirLight(DirLight ulight, vec3 normal, vec3 viewDir)
 #endif
 
    // Combine results
-   vec3 ambient = ulight.ambient * color;
-   vec3 diffuse = ulight.diffuse * diff * color;
+   vec3 ambient = ulight.ambient;
+   vec3 diffuse = ulight.diffuse * diff;
    vec3 specular = ulight.specular * spec * spec_color;
    return (ambient + (1.0 - shadow) * (diffuse + specular));
 }

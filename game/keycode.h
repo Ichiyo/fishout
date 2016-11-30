@@ -1,0 +1,31 @@
+#ifndef __M_KEYCODE_H__
+#define __M_KEYCODE_H__
+
+#define game_key_a 'a'
+#define game_key_b 'b'
+#define game_key_c 'c'
+#define game_key_d 'd'
+#define game_key_e 'e'
+#define game_key_f 'f'
+#define game_key_g 'g'
+#define game_key_h 'h'
+#define game_key_i 'i'
+#define game_key_j 'j'
+#define game_key_k 'k'
+#define game_key_l 'l'
+#define game_key_m 'm'
+#define game_key_n 'n'
+#define game_key_o 'o'
+#define game_key_p 'p'
+#define game_key_q 'q'
+#define game_key_r 'r'
+#define game_key_s 's'
+#define game_key_t 't'
+#define game_key_u 'u'
+#define game_key_v 'v'
+#define game_key_w 'w'
+#define game_key_x 'x'
+#define game_key_y 'y'
+#define game_key_z 'z'
+
+#endif

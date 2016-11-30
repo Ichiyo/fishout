@@ -6,7 +6,7 @@
 #include "texture.h"
 #include "g_math.h"
 #include "actor.h"
-#include "material.h"
+#include "material_3d_default.h"
 
 typedef struct kai_t
 {

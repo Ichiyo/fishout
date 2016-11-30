@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdio.h>
 #include "m_array.h"
+#include "conv.h"
 
 m_string* m_string_new()
 {
@@ -62,6 +63,12 @@ void m_string_cat_string(m_string* s, m_string* in)
 	m_string_reserve(s, new_len);
 	memcpy(s->str + s->len, in->str, in->len + 1);
 	s->len += in->len;
+}
+
+void m_string_cat_int(m_string* s, int in)
+{
+	int_to_chars(n, in);
+	m_string_cat_char_array(s, n);
 }
 
 int m_string_contain_char_array(m_string* s, char* search)

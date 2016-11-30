@@ -23,6 +23,16 @@ void game_loop(game_t* game)
 	scene_render(game->scene);
 }
 
+void game_input_keyboard(game_t* game, keyboard_event_t e)
+{
+	scene_input_keyboard(game->scene, e);
+}
+
+void game_input_touch(game_t* game, touch_event_t e)
+{
+	scene_input_touch(game->scene, e);
+}
+
 void game_free(game_t* game)
 {
 	scene_free(game->scene);
